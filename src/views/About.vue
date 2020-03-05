@@ -19,7 +19,13 @@
           <li><img src="../assets/java-script.svg" alt="javascript" /></li>
           <li><img src="../assets/jquery.png" alt="jquery" /></li>
           <li><img src="../assets/php.svg" alt="php" /></li>
-          <li><img src="../assets/logo.png" alt="vueJS" /></li>
+          <li>
+            <img
+              src="../assets/logo.png"
+              alt="vueJS"
+              style="filter:grayscale(1)"
+            />
+          </li>
           <li><img src="../assets/drupal.svg" alt="drupal" /></li>
         </ul>
       </div>
@@ -121,7 +127,7 @@ export default {
           height: 40px;
           width: 40px;
           border-radius: 50%;
-          background: crimson;
+          background: rgb(107, 20, 220);
           bottom: 50px;
           right: -40px;
         }
