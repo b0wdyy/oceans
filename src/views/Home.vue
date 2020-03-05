@@ -1,6 +1,11 @@
 <template>
   <div class="wrapper">
     <div class="background-text"><h1>DESIGNER</h1></div>
+    <div class="about-spinning">
+      <router-link to="/about"
+        ><img src="../assets/about.png" alt="about"
+      /></router-link>
+    </div>
     <div class="container">
       <div class="profession">
         <ul>
@@ -17,7 +22,7 @@
       <h2 class="home-title">
         <span>Hello</span>
         <span>I am</span>
-        <span>Bodh!</span>
+        <span>Bodhi</span>
       </h2>
     </div>
   </div>
@@ -48,6 +53,37 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.about-spinning {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  right: 780px;
+  top: 250px;
+  cursor: pointer;
+  transform: skewX(30deg);
+
+  transition: 0.5s ease-in-out;
+
+  &:hover {
+    transform: skewX(0);
+  }
+
+  img {
+    width: 100%;
+    animation: spin 7s infinite linear;
+
+    height: 100%;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
 .background-text {
   position: absolute;
   font-size: 10rem;
@@ -55,7 +91,7 @@ export default {
   top: 200px;
 
   color: rgba(255, 255, 255, 0.02);
-  transform: rotate(14deg) skewX(30deg);
+  transform: rotate(14deg) skewX(-30deg);
 }
 .container {
   width: 80%;
@@ -79,16 +115,6 @@ export default {
       li {
         margin-bottom: 10px;
         position: relative;
-
-        &:nth-of-type(1) {
-          left: 30px;
-        }
-        &:nth-of-type(2) {
-          left: 20px;
-        }
-        &:nth-of-type(3) {
-          left: 10px;
-        }
       }
     }
 
@@ -99,6 +125,21 @@ export default {
       span {
         position: relative;
         padding: 0 5px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          height: 2px;
+          background: white;
+          bottom: 0;
+          width: 93%;
+
+          transition: 0.3s ease-in-out;
+        }
+
+        &:hover::before {
+          width: 0;
+        }
 
         &::after {
           position: absolute;
@@ -131,6 +172,7 @@ export default {
     span:nth-of-type(1) {
       position: relative;
       width: 610px;
+
       &::after {
         position: absolute;
         right: 0;
