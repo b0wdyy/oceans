@@ -93,107 +93,99 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
-  width: 80%;
-  margin: 0 auto;
+.background-text {
+  position: absolute;
+  top: 200px;
+  transform: rotate(14deg) skewX(-30deg);
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  z-index: -8;
+  font-size: 20rem;
+  color: rgba(255, 255, 255, 0.02);
+}
 
-  .background-text {
-    position: absolute;
-    top: 200px;
-    transform: rotate(14deg) skewX(-30deg);
+.title-about {
+  h1 {
+    color: white;
+    position: relative;
+    font-size: 13rem;
 
-    z-index: -8;
-    font-size: 20rem;
-    color: rgba(255, 255, 255, 0.02);
-  }
-
-  .title-about {
-    h1 {
-      color: white;
+    span {
       position: relative;
-      font-size: 13rem;
 
-      span {
-        position: relative;
+      &::after {
+        position: absolute;
+        content: "";
 
-        &::after {
-          position: absolute;
-          content: "";
+        display: block;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background: rgb(107, 20, 220);
+        bottom: 50px;
+        right: -40px;
+      }
+    }
+  }
+}
 
-          display: block;
-          height: 40px;
-          width: 40px;
-          border-radius: 50%;
-          background: rgb(107, 20, 220);
-          bottom: 50px;
-          right: -40px;
+.about-text {
+  padding-top: 3.6rem;
+  margin-left: 3rem;
+  transform: translateY(100px);
+  overflow: hidden;
+
+  h3 {
+    color: white;
+    padding-bottom: 32px;
+  }
+
+  .skills {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+    padding-bottom: 44px;
+
+    animation: marquee 9s infinite linear;
+
+    @keyframes marquee {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    li {
+      color: white;
+    }
+  }
+
+  .images {
+    margin-bottom: 30px;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: white;
+      padding: 10px 20px;
+
+      img {
+        max-width: 70px;
+        width: 40px;
+
+        &:nth-of-type(6) {
+          filter: grayscale(1);
         }
       }
     }
   }
 
-  .about-text {
-    padding-top: 3.6rem;
-    margin-left: 3rem;
-    transform: translateY(100px);
-    overflow: hidden;
-
-    h3 {
-      color: white;
-      padding-bottom: 32px;
-    }
-
-    .skills {
-      display: flex;
-      justify-content: space-between;
-      width: 600px;
-      padding-bottom: 44px;
-
-      animation: marquee 9s infinite linear;
-
-      @keyframes marquee {
-        from {
-          transform: translateX(100%);
-        }
-        to {
-          transform: translateX(-100%);
-        }
-      }
-
-      li {
-        color: white;
-      }
-    }
-
-    .images {
-      margin-bottom: 30px;
-      ul {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: white;
-        padding: 10px 20px;
-
-        img {
-          max-width: 70px;
-          width: 40px;
-
-          &:nth-of-type(6) {
-            filter: grayscale(1);
-          }
-        }
-      }
-    }
-
-    p {
-      font-size: 1.5rem;
-      color: white;
-      &:nth-of-type(1) {
-        padding-bottom: 2rem;
-      }
+  p {
+    font-size: 1.5rem;
+    color: white;
+    &:nth-of-type(1) {
+      padding-bottom: 2rem;
     }
   }
 }

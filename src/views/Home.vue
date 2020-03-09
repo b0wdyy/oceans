@@ -93,94 +93,87 @@ export default {
   color: rgba(255, 255, 255, 0.02);
   transform: rotate(14deg) skewX(-30deg);
 }
-.container {
-  width: 80%;
-  margin: 0 auto;
 
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.profession {
+  color: white;
+  width: 300px;
+  ul {
+    transform: rotate(-90deg) translateX(-500px);
+    display: flex;
+    justify-content: space-between;
 
-  .profession {
-    color: white;
-    width: 300px;
-    ul {
-      transform: rotate(-90deg) translateX(-500px);
-      display: flex;
-      justify-content: space-between;
+    position: absolute;
+    left: -100px;
+    width: 400px;
 
-      position: absolute;
-      left: -100px;
-      width: 400px;
-
-      li {
-        margin-bottom: 10px;
-        position: relative;
-      }
-    }
-
-    p {
-      padding-top: 3.3rem;
-      padding-left: 1rem;
-      font-size: 1.7rem;
-      span {
-        position: relative;
-        padding: 0 5px;
-
-        &::before {
-          content: "";
-          position: absolute;
-          height: 2px;
-          background: white;
-          bottom: 0;
-          width: 93%;
-
-          transition: 0.3s ease-in-out;
-        }
-
-        &:hover::before {
-          width: 0;
-        }
-
-        &::after {
-          position: absolute;
-          pointer-events: none;
-          content: "";
-          transition: 0.3s ease-in-out;
-
-          display: block;
-          height: 100%;
-          width: 0px;
-          left: 0;
-          top: 0;
-          background: rgba(255, 0, 0, 0.233);
-        }
-
-        &:hover::after {
-          width: 100%;
-        }
-      }
+    li {
+      margin-bottom: 10px;
+      position: relative;
     }
   }
-  .home-title {
-    display: flex;
-    flex-direction: column;
-    padding-top: 1.2rem;
 
-    font-size: 13rem;
-    color: white;
-
-    span:nth-of-type(1) {
+  p {
+    padding-top: 3.3rem;
+    padding-left: 1rem;
+    font-size: 1.7rem;
+    span {
       position: relative;
-      width: 610px;
+      padding: 0 5px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background: white;
+        bottom: 0;
+        width: 93%;
+
+        transition: 0.3s ease-in-out;
+      }
+
+      &:hover::before {
+        width: 0;
+      }
 
       &::after {
         position: absolute;
-        right: 0;
-        bottom: 0;
-        content: ".";
+        pointer-events: none;
+        content: "";
+        transition: 0.3s ease-in-out;
+
         display: block;
-        color: crimson;
+        height: 100%;
+        width: 0px;
+        left: 0;
+        top: 0;
+        background: rgba(255, 0, 0, 0.233);
       }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+.home-title {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.2rem;
+
+  font-size: 13rem;
+  color: white;
+
+  span:nth-of-type(1) {
+    position: relative;
+    width: 610px;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      content: ".";
+      display: block;
+      color: crimson;
     }
   }
 }

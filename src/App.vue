@@ -1,5 +1,13 @@
 <template>
   <div id="app">
+    <custom-cursor
+      :targets="['a', 'arrow', 'img']"
+      :circleColor="'rgb(255, 60, 60)'"
+      :circleColorHover="'rgb(255, 16, 16)'"
+      :dotColor="'rgba(255, 0, 55, 0.493)'"
+      :dotColorHover="'rgba(255, 0, 55, 0.664)'"
+      :hoverSize="1.4"
+    />
     <div id="nav">
       <div class="home">
         <router-link to="/">{{ logo }}</router-link>
@@ -15,11 +23,16 @@
 </template>
 
 <script>
+import customCursor from "./components/Cursor.vue";
+
 export default {
   data: function() {
     return {
       logo: "<bowdy />"
     };
+  },
+  components: {
+    customCursor
   }
 };
 </script>
@@ -31,6 +44,7 @@ export default {
   box-sizing: border-box;
 
   font-family: Montserrat;
+  cursor: none;
 }
 
 body {
@@ -45,6 +59,25 @@ ul {
 a {
   text-decoration: none;
   color: white;
+}
+
+.cursor {
+  position: absolute;
+
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 16, 16);
+
+  background: rgba(255, 0, 55, 0.664);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 #app {
