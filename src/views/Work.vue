@@ -2,7 +2,9 @@
   <div class="container">
     <h1 class="background-text">WORK</h1>
 
-    <h1>Work with <span>me</span></h1>
+    <h1>
+      Work with <span>me<span class="circle">.</span></span>
+    </h1>
 
     <div class="text">
       <h2>Do you want work with me? Turn your wildest designs into code?</h2>
@@ -122,18 +124,9 @@ h1 {
   span {
     position: relative;
 
-    &::after {
-      position: absolute;
-      bottom: 45px;
-      right: -40px;
-      display: block;
-      content: "";
-
-      width: 40px;
-      height: 40px;
-      background: rgb(50, 20, 220);
-      border-radius: 50%;
-    }
+    // span {
+    //   color: rgb(50, 20, 220);
+    // }
   }
 }
 

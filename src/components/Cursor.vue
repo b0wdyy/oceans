@@ -80,8 +80,6 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
 .custom-cursor {
   cursor: none;
   pointer-events: none;
-
-  z-index: 999;
 }
 .custom-cursor__circle {
   position: fixed;
@@ -94,6 +92,8 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   border-radius: 50%;
   transform: translate(-100%, -100%);
   transition: transform 0.4s $ease;
+
+  z-index: 999;
 }
 .custom-cursor__dot {
   position: fixed;
@@ -106,5 +106,7 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   background-color: #2f2f2f;
   transform: translate(-100%, -100%);
   transition: transform 0.2s $ease;
+
+  z-index: 998;
 }
 </style>

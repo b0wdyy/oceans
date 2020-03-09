@@ -2,7 +2,9 @@
   <div class="container">
     <h1 class="background-text">ABOUT</h1>
     <div class="title-about">
-      <h1>About <span>me</span></h1>
+      <h1>
+        About <span>me<span class="circle">.</span></span>
+      </h1>
     </div>
 
     <div class="about-text">
@@ -12,6 +14,7 @@
           {{ skill.item }}
         </li>
       </ul>
+
       <div class="images">
         <ul>
           <li><img src="../assets/html-5.svg" alt="html 5" /></li>
@@ -88,6 +91,9 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    window.onload(this.setColor);
   }
 };
 </script>
@@ -111,19 +117,9 @@ export default {
 
     span {
       position: relative;
-
-      &::after {
-        position: absolute;
-        content: "";
-
-        display: block;
-        height: 40px;
-        width: 40px;
-        border-radius: 50%;
-        background: rgb(107, 20, 220);
-        bottom: 50px;
-        right: -40px;
-      }
+      // span {
+      //   color: rgb(107, 20, 220);
+      // }
     }
   }
 }
@@ -140,6 +136,7 @@ export default {
   }
 
   .skills {
+    position: relative;
     display: flex;
     justify-content: space-between;
     width: 600px;
@@ -158,6 +155,7 @@ export default {
 
     li {
       color: white;
+      margin-left: 10px;
     }
   }
 

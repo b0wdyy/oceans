@@ -20,7 +20,7 @@
         </p>
       </div>
       <h2 class="home-title">
-        <span>Hello</span>
+        <span>Hello<span class="circle">.</span></span>
         <span>I am</span>
         <span>Bodhi</span>
       </h2>
@@ -167,14 +167,9 @@ export default {
     position: relative;
     width: 610px;
 
-    &::after {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      content: ".";
-      display: block;
-      color: crimson;
-    }
+    // span {
+    //   color: crimson;
+    // }
   }
 }
 </style>

@@ -33,6 +33,17 @@ export default {
   },
   components: {
     customCursor
+  },
+  methods: {
+    setColor: function() {
+      const circle = document.querySelector(".circle");
+      const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+
+      circle.style.color = "#" + randomColor;
+    }
+  },
+  mounted() {
+    document.addEventListener("click", this.setColor);
   }
 };
 </script>
@@ -50,6 +61,8 @@ export default {
 body {
   background: rgb(30, 30, 30);
   position: relative;
+
+  overflow-x: hidden;
 }
 
 ul {
