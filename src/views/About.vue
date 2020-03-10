@@ -109,21 +109,6 @@ export default {
   color: rgba(255, 255, 255, 0.02);
 }
 
-.title-about {
-  h1 {
-    color: white;
-    position: relative;
-    font-size: 13rem;
-
-    span {
-      position: relative;
-      // span {
-      //   color: rgb(107, 20, 220);
-      // }
-    }
-  }
-}
-
 .about-text {
   padding-top: 3.6rem;
   margin-left: 3rem;
@@ -141,17 +126,6 @@ export default {
     justify-content: space-between;
     width: 600px;
     padding-bottom: 44px;
-
-    animation: marquee 9s infinite linear;
-
-    @keyframes marquee {
-      from {
-        transform: translateX(100%);
-      }
-      to {
-        transform: translateX(-100%);
-      }
-    }
 
     li {
       color: white;
@@ -180,7 +154,7 @@ export default {
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: white;
     &:nth-of-type(1) {
       padding-bottom: 2rem;

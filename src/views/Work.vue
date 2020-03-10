@@ -123,10 +123,6 @@ h1 {
 
   span {
     position: relative;
-
-    // span {
-    //   color: rgb(50, 20, 220);
-    // }
   }
 }
 
@@ -137,6 +133,7 @@ h1 {
 
   p {
     margin-top: 24px;
+    font-size: 1.2rem;
 
     span {
       position: relative;

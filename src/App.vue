@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <custom-cursor
-      :targets="['a', 'arrow', 'img']"
+      :targets="['a', 'arrow']"
       :circleColor="'rgb(255, 60, 60)'"
       :circleColorHover="'rgb(255, 16, 16)'"
       :dotColor="'rgba(255, 0, 55, 0.493)'"
@@ -91,6 +91,14 @@ a {
 
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.title-about {
+  h1 {
+    color: white;
+    position: relative;
+    font-size: 13rem;
+  }
 }
 
 #app {

@@ -64,10 +64,6 @@ export default {
 
   transition: 0.5s ease-in-out;
 
-  &:hover {
-    transform: skewX(0);
-  }
-
   img {
     width: 100%;
     animation: spin 7s infinite linear;
@@ -162,14 +158,11 @@ export default {
 
   font-size: 13rem;
   color: white;
+  pointer-events: none;
 
   span:nth-of-type(1) {
     position: relative;
     width: 610px;
-
-    // span {
-    //   color: crimson;
-    // }
   }
 }
 </style>
