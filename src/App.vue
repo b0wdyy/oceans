@@ -8,7 +8,7 @@
       :dotColorHover="'rgba(255, 0, 55, 0.664)'"
       :hoverSize="1.4"
     />
-    <div id="nav">
+    <div id="desk-nav">
       <div class="home">
         <router-link to="/">{{ logo }}</router-link>
       </div>
@@ -74,17 +74,6 @@ a {
   color: white;
 }
 
-.cursor {
-  position: absolute;
-
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  border: 1px solid rgb(255, 16, 16);
-
-  background: rgba(255, 0, 55, 0.664);
-}
-
 .container {
   width: 80%;
   margin: 0 auto;
@@ -102,7 +91,7 @@ a {
 }
 
 #app {
-  #nav {
+  #desk-nav {
     width: 100%;
     height: 128px;
 
@@ -122,6 +111,42 @@ a {
       display: flex;
       width: 400px;
       justify-content: space-between;
+    }
+  }
+}
+
+@media screen and(max-width: 1580px) {
+  .title-about {
+    h1 {
+      font-size: 11rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+  * {
+    cursor: auto;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .title-about {
+    h1 {
+      font-size: 9rem;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .title-about {
+    h1 {
+      font-size: 7rem;
+
+      margin-top: 1rem;
     }
   }
 }

@@ -58,8 +58,8 @@ export default {
 <style lang="scss">
 .background-text {
   position: absolute;
-  top: 200px;
-  left: 0;
+  top: 40%;
+  right: 10%;
   transform: rotate(14deg) skewX(-30deg);
 
   z-index: -8;
@@ -70,7 +70,7 @@ export default {
 
 .text {
   position: absolute;
-  top: 35vh;
+  top: 30vh;
   right: 7vw;
 
   .grid-text {
@@ -90,6 +90,7 @@ export default {
       h3 {
         margin-bottom: 2rem;
         margin-top: 4rem;
+        font-size: 1.7rem;
       }
 
       a {
@@ -109,6 +110,228 @@ export default {
         }
       }
     }
+  }
+}
+
+@media screen and(max-width: 1700px) {
+  .background-text {
+    right: 3vw;
+  }
+
+  .text {
+    right: 2vw;
+  }
+}
+@media screen and (max-width: 1450px) {
+  .background-text {
+    font-size: 18rem;
+
+    top: 30vh;
+  }
+
+  .text {
+    top: 35vh;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .background-text {
+    font-size: 15rem;
+
+    top: 35vh;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .background-text {
+    font-size: 14rem;
+
+    top: 35vh;
+  }
+
+  .text {
+    right: 8vw;
+    top: 40vh;
+    .grid-text {
+      div {
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (max-height: 1366px) {
+  .background-text {
+    font-size: 12rem;
+  }
+
+  .text {
+    right: 5vw;
+    top: 36vh;
+
+    width: 500px;
+
+    .grid-text {
+      img {
+        transform: translateY(-0.9vh);
+      }
+      div {
+        h3 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .background-text {
+    font-size: 12rem;
+
+    top: 35vh;
+  }
+
+  .text {
+    right: 8vw;
+    top: 40vh;
+    .grid-text {
+      div {
+        h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .background-text {
+    font-size: 10.5rem;
+
+    top: 35vh;
+  }
+
+  .text {
+    right: 3vw;
+    top: 37vh;
+    .grid-text {
+      div {
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .background-text {
+    display: none;
+  }
+
+  .text {
+    right: 13vw;
+    top: 50vh;
+    .grid-text {
+      div {
+        width: 100%;
+        h3 {
+          font-size: 1.5rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .text {
+    left: 8vw;
+    top: 55vh;
+
+    width: 500px;
+    padding-bottom: 2rem;
+    .grid-text {
+      img {
+        transform: translateY(-0.6vh);
+      }
+
+      &:nth-of-type(1) {
+        img {
+          transform: translateY(-3vh);
+        }
+      }
+
+      &:nth-of-type(3) {
+        img {
+          transform: translateY(-3.7vh);
+        }
+      }
+      div {
+        width: 400px;
+        padding-bottom: 1.5rem;
+        h3 {
+          font-size: 2rem;
+        }
+
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .text {
+    .grid-text {
+      img {
+        transform: translateY(-0.6vh);
+      }
+
+      &:nth-of-type(1) {
+        img {
+          transform: translateY(-2.8vh);
+        }
+      }
+
+      &:nth-of-type(2) {
+        img {
+          transform: translateY(-1.2vh);
+        }
+      }
+
+      &:nth-of-type(3) {
+        img {
+          transform: translateY(-3.3vh);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .text {
+    top: 60vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .text {
+    top: 72vh;
   }
 }
 </style>
