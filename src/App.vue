@@ -8,11 +8,11 @@
       :dotColorHover="'rgba(255, 0, 55, 0.664)'"
       :hoverSize="1.4"
     />
-    <div id="desk-nav">
+    <div id="nav">
       <div class="home">
         <router-link to="/">{{ logo }}</router-link>
       </div>
-      <ul>
+      <ul class="desk-list">
         <li><router-link to="/about">About</router-link></li>
         <li><router-link to="/work-with-me">Work with me</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
@@ -91,7 +91,7 @@ a {
 }
 
 #app {
-  #desk-nav {
+  #nav {
     width: 100%;
     height: 128px;
 
@@ -106,7 +106,7 @@ a {
       font-size: 1.9rem;
     }
 
-    ul {
+    .desk-list {
       margin-right: 100px;
       display: flex;
       width: 400px;

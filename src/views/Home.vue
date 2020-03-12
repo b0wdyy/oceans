@@ -57,7 +57,7 @@ export default {
   width: 180px;
   height: 180px;
   position: absolute;
-  right: 780px;
+  right: 880px;
   top: 250px;
   cursor: pointer;
   transform: skewX(30deg);
@@ -84,7 +84,8 @@ export default {
   position: absolute;
   font-size: 10rem;
   z-index: -8;
-  top: 200px;
+  top: 25vh;
+  right: 4vw;
 
   color: rgba(255, 255, 255, 0.02);
   transform: rotate(14deg) skewX(-30deg);
@@ -159,10 +160,142 @@ export default {
   font-size: 13rem;
   color: white;
   pointer-events: none;
+}
 
-  span:nth-of-type(1) {
-    position: relative;
-    width: 610px;
+@media screen and (max-width: 1700px) {
+  .background-text {
+    right: 0;
+  }
+}
+
+.about-spinning {
+  right: 45vw;
+}
+
+@media screen and (max-width: 1600px) {
+  .background-text {
+    font-size: 9rem;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .background-text {
+    top: 35vh;
+    left: 4vw;
+    font-size: 7rem;
+  }
+
+  .about-spinning {
+    left: 35vw;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .background-text {
+    font-size: 6rem;
+  }
+
+  .home-title {
+    font-size: 10rem;
+
+    padding-top: 10vh;
+  }
+
+  .about-spinning {
+    width: 140px;
+    height: 140px;
+
+    top: 32vh;
+    left: 40vw;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container {
+    grid-template-rows: 1fr 240px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "text";
+  }
+  .home-title {
+    font-size: 10rem;
+    padding-top: 4rem;
+    padding-right: 10vw;
+    grid-area: title;
+  }
+
+  .profession {
+    grid-area: text;
+    p {
+      top: 4vh;
+      position: relative;
+      left: 40vw;
+      font-size: 1.4rem;
+    }
+
+    ul {
+      transform: rotate(0) translateX(0);
+
+      left: 11vw;
+      bottom: 20vh;
+    }
+  }
+
+  .about-spinning {
+    width: 100px;
+    height: 100px;
+
+    top: 27vh;
+    left: 63vw;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .home-title {
+    padding-top: 3rem;
+    font-size: 8rem;
+  }
+  .about-spinning {
+    left: 60vw;
+    top: 25vh;
+  }
+
+  .profession {
+    p {
+      top: 6vh;
+      left: 37vw;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .about-spinning {
+    top: 88vh;
+    left: 48vw;
+
+    height: 140px;
+    width: 140px;
+
+    transform: skewX(-30deg);
+  }
+
+  .profession {
+    p {
+      font-size: 1.6rem;
+      left: 0;
+      top: 10vh;
+
+      padding-top: 7rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .about-spinning {
+    top: 79vh;
   }
 }
 </style>
