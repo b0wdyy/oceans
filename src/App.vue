@@ -17,6 +17,20 @@
         <li><router-link to="/work-with-me">Work with me</router-link></li>
         <li><router-link to="/contact">Contact</router-link></li>
       </ul>
+
+      <div class="burger-menu" @click="openNav">
+        <div class="burger-menu-line"></div>
+        <div class="burger-menu-line"></div>
+        <div class="burger-menu-line"></div>
+      </div>
+
+      <div class="burger-wrapper">
+        <ul class="burger-list">
+          <li><router-link to="/about">About</router-link></li>
+          <li><router-link to="/work-with-me">Work with me</router-link></li>
+          <li><router-link to="/contact">Contact</router-link></li>
+        </ul>
+      </div>
     </div>
     <router-view />
   </div>
@@ -28,7 +42,8 @@ import customCursor from "./components/Cursor.vue";
 export default {
   data: function() {
     return {
-      logo: "<bowdy />"
+      logo: "<bowdy />",
+      navOpen: false
     };
   },
   components: {
@@ -40,6 +55,21 @@ export default {
       const randomColor = Math.floor(Math.random() * 16777215).toString(16);
 
       circle.style.color = "#" + randomColor;
+    },
+    openNav: function() {
+      const burgerWrapper = document.querySelector(".burger-wrapper");
+
+      if (!this.navOpen) {
+        burgerWrapper.style.opacity = "1";
+        burgerWrapper.style.pointerEvents = "all";
+
+        this.navOpen = true;
+      } else if (this.navOpen) {
+        burgerWrapper.style.opacity = "0";
+        burgerWrapper.style.pointerEvents = "none";
+
+        this.navOpen = false;
+      }
     }
   },
   mounted() {
@@ -91,6 +121,7 @@ a {
 }
 
 #app {
+  width: 100vw !important;
   #nav {
     width: 100%;
     height: 128px;
@@ -104,6 +135,8 @@ a {
 
       letter-spacing: 8px;
       font-size: 1.9rem;
+
+      z-index: 10;
     }
 
     .desk-list {
@@ -111,6 +144,61 @@ a {
       display: flex;
       width: 400px;
       justify-content: space-between;
+    }
+
+    .burger-menu {
+      position: absolute;
+      right: 0;
+
+      display: none;
+      width: 40px;
+      height: 20px;
+      margin-top: 4px;
+
+      z-index: 5;
+      cursor: pointer;
+
+      transition: 0.2s ease-in-out;
+
+      &-line {
+        width: 100%;
+        height: 2px;
+        cursor: pointer;
+
+        background: white;
+        &:nth-of-type(2) {
+          transform: translateY(5px);
+          width: 50%;
+        }
+
+        &:nth-of-type(3) {
+          transform: translateY(10px);
+          width: 70%;
+        }
+      }
+    }
+
+    .burger-wrapper {
+      display: none;
+      background: rgba(0, 0, 0, 0.808);
+
+      height: 100%;
+      width: 100%;
+      padding: 30px 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 4;
+
+      overflow: hiddden;
+
+      transition: 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
+
+      opacity: 0;
+
+      .burger-list {
+        display: none;
+      }
     }
   }
 }
@@ -134,6 +222,38 @@ a {
 }
 
 @media screen and (max-width: 1000px) {
+  #app {
+    #nav {
+      .desk-list {
+        display: none;
+      }
+
+      .burger-menu {
+        display: inline-block;
+      }
+
+      .burger-wrapper {
+        overflow: hidden;
+        display: inline-block;
+
+        width: 100%;
+        height: 800px;
+        .burger-list {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+
+          justify-content: space-between;
+          align-items: center;
+
+          font-size: 2rem;
+          padding: 80px 0;
+        }
+      }
+    }
+  }
+
   .title-about {
     h1 {
       font-size: 9rem;
@@ -141,7 +261,31 @@ a {
   }
 }
 
+@media screen and (max-width: 500px) {
+  #app {
+    #nav {
+      .burger-menu {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 425px) {
+  #app {
+    #nav {
+      .home {
+        margin: 50px;
+      }
+      .burger-menu {
+        margin-right: -40px;
+      }
+
+      .burger-wrapper {
+        right: -100px;
+      }
+    }
+  }
   .title-about {
     h1 {
       font-size: 7rem;

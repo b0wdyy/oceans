@@ -134,7 +134,7 @@ export default {
   }
 
   .images {
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
     ul {
       display: flex;
       align-items: center;
@@ -156,9 +156,51 @@ export default {
   p {
     font-size: 1.2rem;
     color: white;
-    &:nth-of-type(1) {
-      padding-bottom: 2rem;
+
+    padding-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .about-text {
+    transform: translate(-100px, 250px);
+    margin-left: 0;
+    width: 400px;
+
+    .skills {
+      flex-wrap: wrap;
+      width: 300px;
+      li {
+        padding: 20px 10px;
+      }
     }
+
+    .images {
+      ul {
+        img {
+          width: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-text {
+    transform: translate(-150px, 250px);
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .about-text {
+    transform: translate((-330px, 300px));
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .about-text {
+    width: 350px;
+    transform: translate((-335px, 300px));
   }
 }
 </style>
