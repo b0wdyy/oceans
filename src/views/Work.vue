@@ -6,7 +6,7 @@
       Work with <span>me<span class="circle">.</span></span>
     </h1>
 
-    <div class="text">
+    <div class="work-text">
       <h2>Do you want work with me? Turn your wildest designs into code?</h2>
 
       <p>
@@ -126,8 +126,9 @@ h1 {
   }
 }
 
-.text {
+.work-text {
   padding-top: 2.1rem;
+  padding-right: 4rem;
   color: white;
   padding-left: 2rem;
 
@@ -190,6 +191,7 @@ h1 {
     .project-wrapper {
       width: 100%;
       position: relative;
+      left: -30px;
       height: 100%;
 
       transition: 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -219,6 +221,60 @@ h1 {
           max-width: 500px;
         }
       }
+    }
+  }
+}
+
+// NOG RESPONSIVE MAKEN!!
+
+@media screen and (max-width: 1024px) {
+  .work-text {
+    transform: translate(0, 50px);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    grid-template-rows: 1fr 240px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "text";
+
+    h1 {
+      font-size: 8rem;
+    }
+  }
+
+  .work-text {
+    width: 100%;
+
+    .projects {
+      width: 300px;
+      height: 300px;
+
+      .arrow {
+        width: 20px;
+        top: 85%;
+      }
+
+      .prev {
+        left: 0;
+      }
+
+      .next {
+        right: 10%;
+      }
+
+      .project-wrapper {
+        .img-wrapper {
+          width: 300px;
+        }
+      }
+    }
+
+    img {
+      width: 300px;
     }
   }
 }

@@ -26,9 +26,15 @@
 
       <div class="burger-wrapper">
         <ul class="burger-list">
-          <li><router-link to="/about">About</router-link></li>
-          <li><router-link to="/work-with-me">Work with me</router-link></li>
-          <li><router-link to="/contact">Contact</router-link></li>
+          <li @click="closeNav">
+            <router-link to="/about">About</router-link>
+          </li>
+          <li @click="closeNav">
+            <router-link to="/work-with-me">Work with me</router-link>
+          </li>
+          <li @click="closeNav">
+            <router-link to="/contact">Contact</router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -70,6 +76,13 @@ export default {
 
         this.navOpen = false;
       }
+    },
+    closeNav: function() {
+      const burgerWrapper = document.querySelector(".burger-wrapper");
+
+      burgerWrapper.style.opacity = "0";
+      burgerWrapper.style.pointerEvents = "none";
+      this.navOpen = false;
     }
   },
   mounted() {
@@ -79,6 +92,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
